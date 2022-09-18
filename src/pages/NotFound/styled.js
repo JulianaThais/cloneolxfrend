@@ -19,7 +19,7 @@ export const NotFoundArea = styled.div`
     }
     .botao {
       width: 100%;
-      display: felx;
+      display: flex;
     }
     a {
       text-decoration: none;
