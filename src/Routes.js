@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import SignIn from "./pages/signIn";
-
+import SignUp from "./pages/SignUp";
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   return (
@@ -13,6 +13,7 @@ export default () => {
       <Route exact path="/" element={<Home />} />
       <Route exact path="/about" element={<About />} />
       <Route exact path="/signin" element={<SignIn />} />
+      <Route exact path="/signup" element={<SignUp />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
