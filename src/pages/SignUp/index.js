@@ -75,11 +75,11 @@ const Page = () => {
                   onChange={(e) => setName(e.target.value)}
                 >
                   <option></option>
-                  {stateList.map((i, k) => (
+                  {stateList.map((i, k) =>
                     <option key={k} value={i.id}>
                       {i.name}
                     </option>
-                  ))}
+                  )}
                 </select>
               </div>
             </label>

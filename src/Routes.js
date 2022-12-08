@@ -1,20 +1,50 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React from 'react';
+import { Switch } from 'react-router-dom';
+import RouterHandler from './components/RouterHandler';
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import NotFound from "./pages/NotFound";
-import SignIn from "./pages/signIn";
-import SignUp from "./pages/SignUp";
+import Home from './pages/Home';
+import About from './pages/About';
+import NotFound from './pages/NotFound';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import AdPage from './pages/AdPage';
+import AddAd from './pages/AddAd';
+import Ads from './pages/Ads'
+import MyAccount from  './pages/MyAccount'
+
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   return (
-    <Routes>
-      <Route exact path="/" element={<Home />} />
-      <Route exact path="/about" element={<About />} />
-      <Route exact path="/signin" element={<SignIn />} />
-      <Route exact path="/signup" element={<SignUp />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+
+    <Switch>
+    <RouterHandler exact path="/">
+      <Home />
+    </RouterHandler>
+    <RouterHandler exact path="/about">
+      <About />
+    </RouterHandler>
+    <RouterHandler exact path="/signin">
+      <SignIn />
+    </RouterHandler>
+    <RouterHandler exact path="/signup">
+      <SignUp />
+    </RouterHandler>
+    <RouterHandler exact path="/ad/:id">
+      <AdPage />
+    </RouterHandler>
+    <RouterHandler exact path="/ads">
+      <Ads />
+    </RouterHandler>
+    <RouterHandler private exact path="/post-an-ad">
+      <AddAd />
+      </RouterHandler>
+      <RouterHandler private exact path="/my-account">
+      <MyAccount />
+    </RouterHandler>
+    <RouterHandler path="*">
+      <NotFound />
+    </RouterHandler>
+  </Switch>
   );
 };
